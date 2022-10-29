@@ -1,70 +1,73 @@
 <template>
 	<nav class="nav__bar">
-    <!-- branding -->
-		<img src="@/assets/images/logo.svg" alt="logo" />
-
-    <!-- menu btn -->
-		<div class="hamburger" v-if="isMobile">
-      <transition name="menuBtn" mode="out-in">
-        <button type="button" v-if="!isMenuOpen" @click="openMenu">
-          <img src="@/assets/images/icon-hamburger.svg" alt="" class="menu menu--open" />
-        </button>
-        <button type="button" v-else @click="openMenu">
-          <img
-            src="@/assets/images/icon-close.svg"
-            alt=""
-            class="menu menu--close"
-          />
-        </button>
-      
+    <section class="nav__bar--inner">
+      <!-- branding -->
+      <img src="@/assets/images/logo.svg" alt="logo" />
+  
+      <!-- menu btn -->
+      <div class="hamburger" v-if="isMobile">
+        <transition name="menuBtn" mode="out-in">
+          <button type="button" v-if="!isMenuOpen" @click="openMenu">
+            <img src="@/assets/images/icon-hamburger.svg" alt="" class="menu menu--open" />
+          </button>
+          <button type="button" v-else @click="openMenu">
+            <img
+              src="@/assets/images/icon-close.svg"
+              alt=""
+              class="menu menu--close"
+            />
+          </button>
+        
+        </transition>
+      </div>
+  
+      <!-- menu mobile-->
+      <ul class="nav__list" v-if="isMenuOpen">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Pricing</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Product</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">About Us</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Careers</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Community</a>
+        </li>
+      </ul>
+  
+      <!-- overlay -->
+      <transition name="overlay">
+        <div class="overlay" v-if="isMenuOpen"></div>
       </transition>
-		</div>
+  
+       <!-- menu desktop-->
+      <ul class="nav__list-main" v-if="!isMobile">
+        <li class="nav__item-main">
+          <a href="#" class="nav__link">Pricing</a>
+        </li>
+        <li class="nav__item-main">
+          <a href="#" class="nav__link">Product</a>
+        </li>
+        <li class="nav__item-main">
+          <a href="#" class="nav__link">About Us</a>
+        </li>
+        <li class="nav__item-main">
+          <a href="#" class="nav__link">Careers</a>
+        </li>
+        <li class="nav__item-main">
+          <a href="#" class="nav__link">Community</a>
+        </li>
+      </ul>
+  
+      <!-- cta -->
+      <a href="#" class="cta" v-if="!isMobile">Get Started</a>
 
-    <!-- menu mobile-->
-		<ul class="nav__list" v-if="isMenuOpen">
-			<li class="nav__item">
-				<a href="#" class="nav__link">Pricing</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__link">Product</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__link">About Us</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__link">Careers</a>
-			</li>
-			<li class="nav__item">
-				<a href="#" class="nav__link">Community</a>
-			</li>
-		</ul>
-
-    <!-- overlay -->
-    <transition name="overlay">
-      <div class="overlay" v-if="isMenuOpen"></div>
-    </transition>
-
-     <!-- menu desktop-->
-		<ul class="nav__list-main" v-if="!isMobile">
-			<li class="nav__item-main">
-				<a href="#" class="nav__link">Pricing</a>
-			</li>
-			<li class="nav__item-main">
-				<a href="#" class="nav__link">Product</a>
-			</li>
-			<li class="nav__item-main">
-				<a href="#" class="nav__link">About Us</a>
-			</li>
-			<li class="nav__item-main">
-				<a href="#" class="nav__link">Careers</a>
-			</li>
-			<li class="nav__item-main">
-				<a href="#" class="nav__link">Community</a>
-			</li>
-		</ul>
-
-    <!-- cta -->
-		<a href="#" class="cta" v-if="!isMobile">Get Started</a>
+    </section>
 	</nav>
 </template>
 
@@ -93,14 +96,10 @@ export default {
     this.windowWidth = window.innerWidth;
       if (this.windowWidth <= 930) {
         this.isMobile = true;
-        console.log(this.windowWidth, "mobile");
-        console.log(this.isMobile, "mobile");
         return;
       } else {
         this.isMobile = false;
         this.isMenuOpen = false;
-        console.log(this.windowWidth);
-        console.log(this.isMobile);
         return;
         
       }
@@ -112,18 +111,23 @@ export default {
 
 <style scoped>
 .nav__bar {
-	grid-column: 2;
-	grid-row: 1;
-	/* height: 6em; */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-  z-index: 10;
+  width: 100%;
   position: absolute;
   top: 0;
-  width: 100%;
-  padding: 2em;
+  display: grid;
+  grid-template-columns: .1fr 1.8fr .1fr;
+  grid-template-rows: 6em;
+  align-items: center;
+}
+.nav__bar--inner {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+
 }
 .hamburger {
 	width: 25px;
@@ -196,10 +200,25 @@ export default {
 }
 .nav__list-main {
   display: flex;
-
 }
-
-@media (min-width: 756px) {
-
+@media (min-width: 930px) {
+  .nav__bar {
+  grid-template-columns: .11fr 1.78fr .11fr;
+}
+/* .nav__list {
+		position: static;
+		background-color: transparent;
+		text-align: left;
+		padding: 0;
+		display: flex;
+	} */
+	.nav__link {
+		font-size: 0.9rem;
+	}
+}
+@media (min-width: 1200px){
+  .nav__bar {
+  grid-template-columns: .2fr 1.6fr .2fr;
+}
 }
 </style>
