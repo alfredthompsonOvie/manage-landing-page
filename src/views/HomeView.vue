@@ -1,9 +1,17 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <app-header />
+</template>
+
+<script>
+import AppHeader from '../components/AppHeader.vue';
+  export default {
+  name: "HomeView",
+  components: {
+    AppHeader
+    }
+  }
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style scoped>
+
+</style>
