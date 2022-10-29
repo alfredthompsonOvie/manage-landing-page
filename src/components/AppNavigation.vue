@@ -120,8 +120,10 @@ export default {
 	align-items: center;
 	position: relative;
   z-index: 10;
-
-	/* padding: 2em 0; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2em;
 }
 .hamburger {
 	width: 25px;
@@ -130,20 +132,21 @@ export default {
 	cursor: pointer;
 }
 .menu {
-	/* position: absolute;
-	top: 0;
-	left: 0; */
   position: relative;
   display: inline-block;
   z-index: 4;
 
 }
 .nav__list {
-	position: absolute;
+  max-width: 300px;
+  width: 90%;
+
+	position: fixed;
+	/* position: absolute; */
 	top: 6em;
-	left: 0;
-	right: 0;
-	background-color: var(--VaryLightGray);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--VaryLightGray);
 	text-align: center;
 	padding: 1em 0;
 	border-radius: 10px;
@@ -160,16 +163,7 @@ export default {
 .nav__link:hover {
 	color: var(--DarkGrayishBlue);
 }
-.cta {
-	padding: 0.5em 2em 0.7em;
-	background-color: var(--BrightRed);
-	color: var(--VaryLightGray);
-	border-radius: 30px;
-	display: inline-block;
-}
-.cta--main {
-	margin-top: 2em;
-}
+
 
 
 /* overlay */

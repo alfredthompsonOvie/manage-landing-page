@@ -35,6 +35,7 @@ body {
 #app {
 	max-width: 1440px;
 	margin-inline: auto;
+  position: relative;
 }
 img {
 	max-width: 100%;

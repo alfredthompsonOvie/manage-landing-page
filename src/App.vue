@@ -1,13 +1,19 @@
 <template>
-  <router-view></router-view>
+   <!-- navigation -->
+   <app-navigation />
+   
+	<router-view></router-view>
 </template>
 
 <script>
-  export default {
-    name: "App"
-  }
+import AppNavigation from '@/components/AppNavigation.vue';
+
+export default {
+	name: "App",
+	components: {
+		AppNavigation,
+	},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,7 +1,5 @@
 <template>
 	<header class="header">
-    <!-- navigation -->
-    <app-navigation />
     <!-- hero section -->
 		<section class="hero">
 			<div class="hero__inner">
@@ -24,18 +22,7 @@
 </template>
 
 <script>
-import AppNavigation from './AppNavigation.vue';
 export default {
   name: "AppHeader",
-  components: {
-    AppNavigation
-  }
 };
 </script>
-
-<style scoped>
-.hero {
-  display: none;
-}
-
-</style>

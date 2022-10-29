@@ -12,3 +12,58 @@
 	grid-template-columns: 0.1fr 1.8fr 0.1fr;
 	grid-template-rows: 6em auto;
 }
+.cta {
+	padding: 0.5em 2em 0.7em;
+	background-color: var(--BrightRed);
+	color: var(--VaryLightGray);
+	border-radius: 30px;
+	display: inline-block;
+}
+.cta--main {
+	margin-top: 2em;
+}
+/* ============================================ */
+/* ============================================ */
+.hero {
+	grid-column: 1/-1;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 0.1fr 1.8fr 0.1fr;
+	background-image: url("../images/bg-tablet-pattern.svg");
+	background-position: right -560% bottom 10px;
+	background-size: 90%;
+	 /* background-size: 120%; */
+	background-repeat: no-repeat;
+	padding-bottom: 5em;
+}
+.hero__inner {
+	grid-column: 2;
+}
+.hero__img {
+	width: 100%;
+}
+.hero__content {
+	text-align: center;
+}
+.title {
+	max-width: 600px;
+	margin-inline: auto;
+	color: var(--DarkBlue);
+	line-height: 1.2;
+}
+.title--main {
+	font-size: clamp(2rem, 1em + 6vw, 3rem);
+}
+.title--subHeading {
+	font-size: clamp(1.5rem, 8vw, 2.4rem);
+}
+.text {
+	color: var(--DarkGrayishBlue);
+}
+.text--main {
+	line-height: 1.8;
+	font-size: clamp(1rem, 1rem + 8vw, 1.0625rem);
+	max-width: 450px;
+	margin-inline: auto;
+	margin-top: 1em;
+}
