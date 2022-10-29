@@ -131,9 +131,41 @@
 }
 /* ============================================ */
 /* ============================================ */
+.testimonials {
+	grid-column: 1/-1;
+	grid-row: 2;
+	padding: 1em;
+	text-align: center;
+	overflow: hidden;
+	margin: 1.5em 0 1em;
+}
+.testimonial__wrapper {
+  margin: 5em 0 1em;
+  position: relative;
+  padding-bottom: 3em;
+  border: 1px solid;
+  
+}
+.testimonial__card {
+  background-color: var(--VaryLightGray);
+  position: relative;
+  padding: 3em 0 1em;
+}
+.avatar {
+  width: 5em;
+  position: absolute;
+  top: -3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-
-
+.swiper-pagination {
+	position: absolute;
+  bottom: 0;
+}
+.swiper-pagination-bullet {
+	background-color: red;
+}
 
 /* ============================================ */
 /* ============================================ */
