@@ -4,22 +4,40 @@
 			<h2 class="title title--subHeading">What they've said</h2>
 		</div>
     <!--  -->
-    <swiper
-      :effect="'cube'"
-      :grabCursor="true"
+    <!-- :effect="'cube'"
       :cubeEffect="{
         shadow: false,
         slideShadows: false,
         shadowOffset: 20,
         shadowScale: 0.94,
-      }"
+      }" -->
+    <swiper
+    :grabCursor="true"
+    
       :autoplay="{
         delay: 2500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }"
+      :centeredSlides="true"
+      :slidesPerView="'auto'"
       :pagination="{ clickable: true }"
       :loop="true"
+      :spaceBetween="10"
+      :breakpoints="{
+      '700': {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // '768': {
+      //   slidesPerView: 3,
+      //   spaceBetween: 20,
+      // },
+      // '1024': {
+      //   slidesPerView: 5,
+      //   spaceBetween: 50,
+      // },
+    }"
       :modules="modules"
       class="testimonial__wrapper"
     >
