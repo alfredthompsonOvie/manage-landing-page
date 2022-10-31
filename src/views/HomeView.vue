@@ -56,6 +56,7 @@
 							<img
 								src="@/assets/images/icon-facebook.svg"
 								alt="facebook icon"
+								class="social__link-img"
 							/>
 						</a>
 					</li>
