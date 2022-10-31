@@ -279,6 +279,11 @@
 }
 .nav__link--footer {
 	color: var(--VaryLightGray);
+	transition: all .3s linear;
+}
+.nav__link--footer:hover {
+	color: var(--BrightRed);
+
 }
 .social__links {
 	margin-top: 2em;
