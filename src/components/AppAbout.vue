@@ -50,3 +50,8 @@ export default {
 	name: "AppAbout",
 };
 </script>
+<style scoped>
+.text--main {
+	font-size: clamp(.9rem, 4.2vw, 1.0625rem);
+}
+</style>

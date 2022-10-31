@@ -2,7 +2,7 @@
 	<nav class="nav__bar">
     <section class="nav__bar--inner">
       <!-- branding -->
-      <img src="@/assets/images/logo.svg" alt="logo" />
+      <img src="@/assets/images/logo.svg" alt="logo"  class="branding"/>
   
       <!-- menu btn -->
       <div class="hamburger" v-if="isMobile">
@@ -127,7 +127,9 @@ export default {
   align-items: center;
   position: relative;
   z-index: 10;
-
+}
+.branding {
+  width: 8.5em;
 }
 .hamburger {
 	width: 25px;

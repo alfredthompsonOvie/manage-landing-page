@@ -14,7 +14,6 @@
 		<section class="contacts">
 			<form action="#" class="form">
 				<div class="form__group">
-					<!-- <label for="email"></label> -->
 					<input
 						type="email"
 						class="form__control"
@@ -54,33 +53,54 @@
 				<ul class="social__list">
 					<li class="social_item">
 						<a href="#" class="social__link">
-							<img src="@/assets/images/icon-facebook.svg" alt="facebook icon" />
+							<img
+								src="@/assets/images/icon-facebook.svg"
+								alt="facebook icon"
+							/>
 						</a>
 					</li>
 					<li class="social_item">
 						<a href="#" class="social__link">
-							<img src="@/assets/images/icon-youtube.svg" alt="facebook icon" />
+							<img src="@/assets/images/icon-youtube.svg" alt="youtube icon" />
 						</a>
 					</li>
 					<li class="social_item">
 						<a href="#" class="social__link">
-							<img src="@/assets/images/icon-twitter.svg" alt="facebook icon" />
+							<img src="@/assets/images/icon-twitter.svg" alt="twitter icon" />
 						</a>
 					</li>
 					<li class="social_item">
 						<a href="#" class="social__link">
-							<img src="@/assets/images/icon-pinterest.svg" alt="facebook icon" />
+							<img
+								src="@/assets/images/icon-pinterest.svg"
+								alt="pinterest icon"
+							/>
 						</a>
 					</li>
 					<li class="social_item">
 						<a href="#" class="social__link">
-							<img src="@/assets/images/icon-instagram.svg" alt="facebook icon" />
+							<img
+								src="@/assets/images/icon-instagram.svg"
+								alt="instagram icon"
+							/>
 						</a>
 					</li>
 				</ul>
 				<img src="@/assets/images/logo.svg" alt="logo" class="logo--footer" />
 			</div>
 			<p class="copyright">Copyright 2020. All Rights Reserved</p>
+
+			<div class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by
+				<a
+					href="https://www.linkedin.com/in/alfredthompsonovie/"
+					target="_blank"
+					>Alfred Thompson Ovie</a
+				>.
+			</div>
 		</section>
 	</footer>
 </template>
