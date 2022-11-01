@@ -1,6 +1,6 @@
 import { Form as VeeForm, Field as VeeField, ErrorMessage, defineRule, configure } from "vee-validate";
 
-import { required, email } from "@vee-validate/rules";
+import { required, email, min, max } from "@vee-validate/rules";
 
 
 export default {
@@ -11,6 +11,8 @@ export default {
 
     defineRule("required", required);
     defineRule("email", email);
+    defineRule("min", min);
+    defineRule("max", max);
 
     configure({
       generateMessage: (ctx) => {

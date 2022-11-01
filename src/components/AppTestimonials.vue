@@ -12,25 +12,30 @@
         shadowScale: 0.94,
       }" -->
 		<swiper
-			:grabCursor="true"
+			:slidesPerView="'auto'"
+			:spaceBetween="10"
+
+			:centeredSlides="true"
 			:autoplay="{
 				delay: 2500,
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
 			}"
-			:mousewheel="true"
-			:slidesPerView="'auto'"
-			:spaceBetween="10"
-			:pagination="{ clickable: true }"
-
 			:speed="1000"
-			:centeredSlides="true"
+			:grabCursor="true"
+			:loop="true"
+			:mousewheel="true"
+			:pagination="{ clickable: true }"
 			:breakpoints="{
 				'700': {
-					initialSlide: 0,
 					slideToClickedSlide: true,
 					slidesPerView: 2,
 					spaceBetween: 20,
+				},
+				'1200': {
+					slideToClickedSlide: true,
+					slidesPerView: 3,
+					spaceBetween: 40,
 				},
 			}"
 			:modules="modules"

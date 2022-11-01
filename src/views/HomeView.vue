@@ -12,16 +12,23 @@
 			</div>
 		</section>
 		<section class="contacts">
-			<form action="#" class="form">
+			<vee-form action="#" class="form" :validation-schema="schema" @submit="handleSubmit">
 				<div class="form__group">
-					<input
-						type="email"
-						class="form__control"
-						placeholder="Updates in your inbox..."
-					/>
-					<button type="submit" class="submitBtn">Go</button>
+					<vee-field name="email" type="email" :bails="false" v-slot="{ field, errors }">
+						<input
+							type="email"
+							class="form__control"
+							:class="{'error-input': errors.length }"
+							placeholder="Updates in your inbox..."
+							v-bind="field"
+						/>
+						<transition name="errorMsg">
+							<ErrorMessage name="email" class="errorMsg" />
+						</transition>
+					</vee-field>
 				</div>
-			</form>
+				<button type="submit" class="submitBtn">Go</button>
+			</vee-form>
 			<div class="footer__links">
 				<ul class="nav__list--footer">
 					<li class="nav__item--footer">
@@ -118,6 +125,18 @@ export default {
 		AppAbout,
 		AppTestimonials,
 	},
+	data() {
+		return {
+			schema: {
+				email: "required|min:2|max:50|email",
+			},
+		};
+	},
+	methods: {
+		handleSubmit(values) {
+			console.log(values);
+		}
+	}
 };
 </script>
 
