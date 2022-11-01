@@ -18,24 +18,20 @@
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
 			}"
-			:centeredSlides="true"
+			:mousewheel="true"
 			:slidesPerView="'auto'"
-			:pagination="{ clickable: true }"
-			:loop="true"
 			:spaceBetween="10"
+			:pagination="{ clickable: true }"
+
+			:speed="1000"
+			:centeredSlides="true"
 			:breakpoints="{
 				'700': {
+					initialSlide: 0,
+					slideToClickedSlide: true,
 					slidesPerView: 2,
 					spaceBetween: 20,
 				},
-				// '768': {
-				//   slidesPerView: 3,
-				//   spaceBetween: 20,
-				// },
-				// '1024': {
-				//   slidesPerView: 5,
-				//   spaceBetween: 50,
-				// },
 			}"
 			:modules="modules"
 			class="testimonial__wrapper"
