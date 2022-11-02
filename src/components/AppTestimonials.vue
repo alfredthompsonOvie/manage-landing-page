@@ -30,12 +30,10 @@
 				'700': {
 					slideToClickedSlide: true,
 					slidesPerView: 2,
-					spaceBetween: 20,
 				},
 				'1200': {
 					slideToClickedSlide: true,
 					slidesPerView: 3,
-					spaceBetween: 40,
 				},
 			}"
 			:modules="modules"

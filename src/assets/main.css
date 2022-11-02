@@ -406,10 +406,15 @@
 	}
 	.swiper-wrapper {
 		width: 2200px;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		gap: 2em;
 	}
 	.swiper-slide {
-		width: 400px;
+		width: 500px !important;
 		padding: 3em;
+		margin: 0 auto !important;
 	}
 	.swiper-pagination {
 		display: none;
