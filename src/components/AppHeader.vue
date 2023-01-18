@@ -14,7 +14,7 @@
 						Manage makes it simple for software teams to plan day-to-day tasks
 						while keeping the larger team goals in view.
 					</p>
-					<a href="#" class="cta cta--main">Get Started</a>
+					<AppLink :to="{ name: '' }" class="cta cta--main">Get Started</AppLink>
 				</div>
 			</div>
 		</section>
@@ -22,7 +22,11 @@
 </template>
 
 <script>
+import AppLink from './AppLink.vue';
 export default {
-  name: "AppHeader",
+	name: "AppHeader",
+	components: {
+		AppLink,
+	}
 };
 </script>

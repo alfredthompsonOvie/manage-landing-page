@@ -13,27 +13,35 @@
       }" -->
 		<swiper
 			:slidesPerView="'auto'"
-			:spaceBetween="10"
-
 			:centeredSlides="true"
+			:spaceBetween="20"
+			:pagination="{
+				clickable: true,
+			}"
 			:autoplay="{
-				delay: 2500,
+				delay: 1000,
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
 			}"
-			:speed="1000"
 			:grabCursor="true"
-			:loop="true"
+			:speed="1000"
 			:mousewheel="true"
-			:pagination="{ clickable: true }"
+			:loop="true"
 			:breakpoints="{
-				'700': {
+				'640': {
+					spaceBetween: 20,
 					slideToClickedSlide: true,
-					slidesPerView: 2,
+					// centeredSlides: true,
 				},
-				'1200': {
+				'768': {
+					spaceBetween: 30,
 					slideToClickedSlide: true,
-					slidesPerView: 3,
+					// centeredSlides: true,
+				},
+				'1024': {
+					spaceBetween: 40,
+					slideToClickedSlide: true,
+					// centeredSlides: true,
 				},
 			}"
 			:modules="modules"
@@ -85,26 +93,29 @@
 			</swiper-slide>
 		</swiper>
 
-		<a href="#" class="cta cta--main">Get Started</a>
+		<AppLink :to="{ name: '' }" class="cta cta--main">Get Started</AppLink>
 	</section>
 </template>
 
 <script>
-import { Pagination, Autoplay, EffectCube } from "swiper";
+import AppLink from "./AppLink.vue";
+import { Pagination, Autoplay } from "swiper";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-cube";
+
 export default {
 	name: "AppTestimonials",
 	components: {
 		Swiper,
 		SwiperSlide,
+		AppLink,
 	},
 	setup() {
 		const onSwiper = (swiper) => {
@@ -113,10 +124,11 @@ export default {
 		const onSlideChange = () => {
 			console.log("slide change");
 		};
+
 		return {
 			onSwiper,
 			onSlideChange,
-			modules: [Pagination, Autoplay, EffectCube],
+			modules: [Pagination, Autoplay],
 		};
 	},
 };

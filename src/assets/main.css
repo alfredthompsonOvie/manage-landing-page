@@ -142,18 +142,19 @@
 	padding: 1em .8em;
 	text-align: center;
 	overflow: hidden;
-	margin: 3.5em 0 1em;
+	margin: 3.5em 0 2em;
 }
 .testimonial__wrapper {
   margin: 4em 0 1em;
   position: relative;
   padding: 3em 0 4em;
+	width: 100%;
 }
+
 .testimonial__card {
   background-color: var(--VaryLightGray);
   position: relative;
-  padding: 3em 0 5em;
-	height: 120px;
+  padding: 3em 0 2em !important;
 	width: 100%;
 }
 .testimonial__card .text {
@@ -190,7 +191,7 @@
 
 }
 .testimonials .cta--main {
-	margin: 2em 0 1em;
+	margin: 1em 0 1em;
 }
 /* ============================================ */
 /* ============================================ */
@@ -199,7 +200,7 @@
 	grid-template-columns: 0.1fr 1.8fr 0.1fr;
 	grid-template-rows: auto auto;
 	background-color: var(--VeryDarkBlue);
-
+	/* margin-top: 3em; */
 }
 .getStarted {
 	grid-column: 1/-1;
@@ -355,6 +356,14 @@
 /* !MEDIA QUERIES */
 /* ============================================ */
 /* ============================================ */
+@media (min-width: 350px) {
+	.swiper-slide {
+		height: 120px;
+		max-width: 460px !important;
+		width: 100% !important;
+		padding: 3em 0 4em !important;
+	}
+}
 @media (min-width: 357px) {
 	.form__group {
 		width: initial;
@@ -367,6 +376,12 @@
 @media (min-width: 375px) {
 	.header {
 		background-size: contain;
+	}
+}
+
+@media (min-width: 450px) {
+	.swiper-slide {
+		padding: 3em 0 2em !important;
 	}
 }
 @media (min-width: 480px) {
@@ -383,6 +398,7 @@
 	}
 }
 
+
 @media (min-width: 620px) {
 	.header {
 		display: grid;
@@ -390,34 +406,37 @@
 		background-size: 90%;
 	}
 
-	.swiper-slide {
-		padding: 3em 1em;
-	}
 	.testimonial__card .text {
 		padding: 1em;
 	}
 }
-@media (min-width: 700px) {
-	.testimonials {
-		padding: 0;
-	}
+
+@media (min-width: 640px) {
+
 	.swiper {
 		width: 100%;
 	}
-	.swiper-wrapper {
-		width: 2200px;
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		gap: 2em;
-	}
 	.swiper-slide {
-		width: 500px !important;
-		padding: 3em;
-		margin: 0 auto !important;
+		max-width: 460px !important;
+		width: 100% !important;
+	}
+}
+@media (min-width: 700px) {
+	.testimonial__wrapper {
+		margin: 4em 0 0em;
+		position: relative;
+		padding: 3em 0 3.5em;
+
 	}
 	.swiper-pagination {
 		display: none;
+	} 
+	.testimonials .cta--main {
+		margin: 0;
+	}
+
+	.footer {
+		margin-top: 8em;
 	}
 }
 @media (min-width: 930px){
@@ -430,9 +449,6 @@
 		background-position: right -120px top -180px;
 		background-size: contain;
 	}
-	/* .hamburger {
-		display: none;
-	} */
 
 	.hero {
 		grid-column: 1/-1;

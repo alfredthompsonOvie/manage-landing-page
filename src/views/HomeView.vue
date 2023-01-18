@@ -8,7 +8,7 @@
 		<section class="getStarted">
 			<div class="getStarted__content">
 				<p>Simplify how your team works today.</p>
-				<a href="#" class="cta cta--alt">Get Started</a>
+				<AppLink :to="{ name: '' }" class="cta cta--alt">Get Started</AppLink>
 			</div>
 		</section>
 		<section class="contacts">
@@ -32,66 +32,80 @@
 			<div class="footer__links">
 				<ul class="nav__list--footer">
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Home</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Home
+						</AppLink>
 					</li>
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Pricing</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Pricing
+						</AppLink>
 					</li>
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Products</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Products
+						</AppLink>
 					</li>
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">About Us</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							About Us
+						</AppLink>
 					</li>
 				</ul>
 				<ul class="nav__list--footer">
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Careers</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Careers
+						</AppLink>
 					</li>
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Community</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Community
+						</AppLink>
 					</li>
 					<li class="nav__item--footer">
-						<a href="#" class="nav__link--footer">Privacy Policy</a>
+						<AppLink :to="{ name: '' }" class="nav__link--footer">
+							Privacy Policy
+						</AppLink>
 					</li>
 				</ul>
 			</div>
 			<div class="social__links">
 				<ul class="social__list">
 					<li class="social_item">
-						<a href="#" class="social__link">
+						<AppLink to="https://www.facebook.com" class="social__link">
 							<img
 								src="@/assets/images/icon-facebook.svg"
 								alt="facebook icon"
 								class="social__link-img"
 							/>
-						</a>
+						</AppLink>
 					</li>
 					<li class="social_item">
-						<a href="#" class="social__link">
+						<AppLink to="https://www.youtube.com" class="social__link">
 							<img src="@/assets/images/icon-youtube.svg" alt="youtube icon" />
-						</a>
+						</AppLink>
 					</li>
 					<li class="social_item">
-						<a href="#" class="social__link">
+						<AppLink to="https://www.twitter.com" class="social__link">
 							<img src="@/assets/images/icon-twitter.svg" alt="twitter icon" />
-						</a>
+						</AppLink>
 					</li>
 					<li class="social_item">
-						<a href="#" class="social__link">
+						<AppLink to="https://www.pinterest.com" class="social__link">
 							<img
 								src="@/assets/images/icon-pinterest.svg"
 								alt="pinterest icon"
 							/>
-						</a>
+						</AppLink>
 					</li>
 					<li class="social_item">
-						<a href="#" class="social__link">
+						<AppLink to="https://www.instagram.com" class="social__link">
 							<img
 								src="@/assets/images/icon-instagram.svg"
 								alt="instagram icon"
 							/>
-						</a>
+						</AppLink>
 					</li>
 				</ul>
 				<img src="@/assets/images/logo.svg" alt="logo" class="logo--footer" />
@@ -100,14 +114,10 @@
 
 			<div class="attribution">
 				Challenge by
-				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-					>Frontend Mentor</a
-				>. Coded by
-				<a
-					href="https://www.linkedin.com/in/alfredthompsonovie/"
-					target="_blank"
-					>Alfred Thompson Ovie</a
-				>.
+				<AppLink to="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</AppLink>
+				. Coded by
+				<AppLink to="https://www.linkedin.com/in/alfredthompsonovie/">Alfred Thompson Ovie</AppLink>
+				.
 			</div>
 		</section>
 	</footer>
@@ -117,6 +127,7 @@
 import AppHeader from "../components/AppHeader.vue";
 import AppAbout from "../components/AppAbout.vue";
 import AppTestimonials from "../components/AppTestimonials.vue";
+import AppLink from "../components/AppLink.vue";
 
 export default {
 	name: "HomeView",
@@ -124,6 +135,7 @@ export default {
 		AppHeader,
 		AppAbout,
 		AppTestimonials,
+		AppLink,
 	},
 	data() {
 		return {
