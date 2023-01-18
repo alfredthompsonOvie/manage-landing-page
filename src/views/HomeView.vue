@@ -12,13 +12,23 @@
 			</div>
 		</section>
 		<section class="contacts">
-			<vee-form action="#" class="form" :validation-schema="schema" @submit="handleSubmit">
+			<vee-form
+				action="#"
+				class="form"
+				:validation-schema="schema"
+				@submit="handleSubmit"
+			>
 				<div class="form__group">
-					<vee-field name="email" type="email" :bails="false" v-slot="{ field, errors }">
+					<vee-field
+						name="email"
+						type="email"
+						:bails="false"
+						v-slot="{ field, errors }"
+					>
 						<input
 							type="email"
 							class="form__control"
-							:class="{'error-input': errors.length }"
+							:class="{ 'error-input': errors.length }"
 							placeholder="Updates in your inbox..."
 							v-bind="field"
 						/>
@@ -76,26 +86,26 @@
 						<AppLink to="https://www.facebook.com" class="social__link">
 							<img
 								src="@/assets/images/icon-facebook.svg"
-								alt="facebook icon"
+								alt="facebook"
 								class="social__link-img"
 							/>
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.youtube.com" class="social__link">
-							<img src="@/assets/images/icon-youtube.svg" alt="youtube icon" />
+							<img src="@/assets/images/icon-youtube.svg" alt="youtube" />
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.twitter.com" class="social__link">
-							<img src="@/assets/images/icon-twitter.svg" alt="twitter icon" />
+							<img src="@/assets/images/icon-twitter.svg" alt="twitter" />
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.pinterest.com" class="social__link">
 							<img
 								src="@/assets/images/icon-pinterest.svg"
-								alt="pinterest icon"
+								alt="pinterest"
 							/>
 						</AppLink>
 					</li>
@@ -103,20 +113,26 @@
 						<AppLink to="https://www.instagram.com" class="social__link">
 							<img
 								src="@/assets/images/icon-instagram.svg"
-								alt="instagram icon"
+								alt="instagram"
 							/>
 						</AppLink>
 					</li>
 				</ul>
-				<img src="@/assets/images/logo.svg" alt="logo" class="logo--footer" />
+				<AppLink :to="{ name: 'home' }" class="nav__link--footer">
+					<img src="@/assets/images/logo.svg" alt="manage logo" class="logo--footer" />
+				</AppLink>
 			</div>
 			<p class="copyright">Copyright 2020. All Rights Reserved</p>
 
 			<div class="attribution">
 				Challenge by
-				<AppLink to="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</AppLink>
+				<AppLink to="https://www.frontendmentor.io?ref=challenge"
+					>Frontend Mentor</AppLink
+				>
 				. Coded by
-				<AppLink to="https://www.linkedin.com/in/alfredthompsonovie/">Alfred Thompson Ovie</AppLink>
+				<AppLink to="https://www.linkedin.com/in/alfredthompsonovie/"
+					>Alfred Thompson Ovie</AppLink
+				>
 				.
 			</div>
 		</section>
@@ -147,8 +163,8 @@ export default {
 	methods: {
 		handleSubmit(values) {
 			console.log(values);
-		}
-	}
+		},
+	},
 };
 </script>
 

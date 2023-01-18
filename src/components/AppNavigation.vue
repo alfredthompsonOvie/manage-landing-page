@@ -2,7 +2,9 @@
 	<nav class="nav__bar">
 		<section class="nav__bar--inner">
 			<!-- branding -->
-			<img src="@/assets/images/logo.svg" alt="logo" class="branding" />
+			<AppLink :to="{ name: 'home' }" class="nav__link--footer">
+				<img src="@/assets/images/logo.svg" alt="manage logo" class="branding" />
+			</AppLink>
 
 			<!-- menu btn -->
 			<div class="hamburger" v-if="isMobile">
@@ -10,14 +12,14 @@
 					<button type="button" v-if="!isMenuOpen" @click="openMenu">
 						<img
 							src="@/assets/images/icon-hamburger.svg"
-							alt=""
+							alt="open menu button"
 							class="menu menu--open"
 						/>
 					</button>
 					<button type="button" v-else @click="openMenu">
 						<img
 							src="@/assets/images/icon-close.svg"
-							alt=""
+							alt="close menu button"
 							class="menu menu--close"
 						/>
 					</button>
@@ -25,27 +27,30 @@
 			</div>
 
 			<!-- menu mobile-->
-			<ul class="nav__list" v-if="isMenuOpen">
-				<li class="nav__item">
-					<AppLink :to="{ name: '' }" class="nav__link"> Pricing </AppLink>
-				</li>
-				<li class="nav__item">
-					<AppLink :to="{ name: '' }" class="nav__link"> Product </AppLink>
-				</li>
-				<li class="nav__item">
-					<AppLink :to="{ name: '' }" class="nav__link"> About Us </AppLink>
-				</li>
-				<li class="nav__item">
-					<AppLink :to="{ name: '' }" class="nav__link"> Careers </AppLink>
-				</li>
-				<li class="nav__item">
-					<AppLink :to="{ name: '' }" class="nav__link"> Community </AppLink>
-				</li>
-			</ul>
-
-			<!-- overlay -->
-			<transition name="overlay">
-				<div class="overlay" v-if="isMenuOpen"></div>
+			<transition
+			@enter="onEnter"
+			@leave="onLeave"
+			:css="false"
+			>
+				<div class="overlay" v-if="isMenuOpen">
+					<ul class="nav__list" >
+					<li class="nav__item">
+						<AppLink :to="{ name: '' }" class="nav__link"> Pricing </AppLink>
+					</li>
+					<li class="nav__item">
+						<AppLink :to="{ name: '' }" class="nav__link"> Product </AppLink>
+					</li>
+					<li class="nav__item">
+						<AppLink :to="{ name: '' }" class="nav__link"> About Us </AppLink>
+					</li>
+					<li class="nav__item">
+						<AppLink :to="{ name: '' }" class="nav__link"> Careers </AppLink>
+					</li>
+					<li class="nav__item">
+						<AppLink :to="{ name: '' }" class="nav__link"> Community </AppLink>
+					</li>
+				</ul>
+				</div>
 			</transition>
 
 			<!-- menu desktop-->
@@ -76,12 +81,14 @@
 </template>
 
 <script>
-import AppLink from './AppLink.vue';
+import AppLink from "./AppLink.vue";
+import { gsap } from "gsap";
+
 export default {
-  name: "AppNavigation",
-  components: {
-    AppLink,
-  },
+	name: "AppNavigation",
+	components: {
+		AppLink,
+	},
 	data() {
 		return {
 			isMenuOpen: false,
@@ -109,6 +116,41 @@ export default {
 				this.isMenuOpen = false;
 				return;
 			}
+		},
+		onEnter(el, done) {
+			const ul = el.children[0];
+			const li = ul.children
+
+			const tl = gsap.timeline();
+			tl
+				.from(el, {
+					autoAlpha: 0.01,
+					x: 200,
+				})
+				.from(ul, {
+					autoAlpha: 0.01,
+					scale: 0.95,
+				})
+				.from(li, {
+					autoAlpha: 0.01,
+					x: 20,
+					stagger: 0.25,
+					onComplete: done
+				})
+		},
+		onLeave(el, done) { 
+			const ul = el.children[0];
+			const tl = gsap.timeline();
+			tl
+			.to(ul, {
+				autoAlpha: 0.01,
+				scale: 0.95,
+			})
+			.to(el, {
+				autoAlpha: 0.01,
+				x: 200,
+				onComplete: done
+				})
 		},
 	},
 };
@@ -140,7 +182,11 @@ export default {
 	width: 25px;
 	height: 22px;
 	position: relative;
+	z-index: 99;
+}
+.hamburger button {
 	cursor: pointer;
+	
 }
 .menu {
 	position: relative;
@@ -150,9 +196,7 @@ export default {
 .nav__list {
 	max-width: 300px;
 	width: 90%;
-
 	position: fixed;
-	/* position: absolute; */
 	top: 6em;
 	left: 50%;
 	transform: translateX(-50%);
@@ -176,7 +220,6 @@ export default {
 /* overlay */
 .overlay {
 	position: fixed;
-	/* position: absolute; */
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -185,25 +228,6 @@ export default {
 	z-index: 2;
 }
 
-/* transition */
-.menuBtn-enter-from,
-.menuBtn-leave-to {
-	opacity: 0;
-	transform: rotate(360deg);
-}
-.menuBtn-enter-active,
-.menuBtn-leave-active {
-	transition: all 0.3s linear;
-}
-.overlay-enter-from,
-.overlay-leave-to {
-	opacity: 0;
-	transform: translateX(100px);
-}
-.overlay-enter-active,
-.overlay-leave-active {
-	transition: all 0.3s linear;
-}
 .nav__list--main {
 	display: flex;
 }
@@ -211,13 +235,6 @@ export default {
 	.nav__bar {
 		grid-template-columns: 0.11fr 1.78fr 0.11fr;
 	}
-	/* .nav__list {
-		position: static;
-		background-color: transparent;
-		text-align: left;
-		padding: 0;
-		display: flex;
-	} */
 	.nav__link {
 		font-size: 0.9rem;
 	}

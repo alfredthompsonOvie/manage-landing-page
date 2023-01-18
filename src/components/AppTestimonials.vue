@@ -19,12 +19,12 @@
 				clickable: true,
 			}"
 			:autoplay="{
-				delay: 1000,
+				delay: 3500,
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
 			}"
 			:grabCursor="true"
-			:speed="1000"
+			:speed="1500"
 			:mousewheel="true"
 			:loop="true"
 			:breakpoints="{

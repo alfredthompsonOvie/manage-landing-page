@@ -4,7 +4,7 @@
 		<section class="hero">
 			<div class="hero__inner">
 				<div class="hero__illustration">
-					<img src="@/assets/images/illustration-intro.svg" alt="" class="hero__img" />
+					<img src="@/assets/images/illustration-intro.svg" alt="manage illustration banner" class="hero__img" />
 				</div>
 				<div class="hero__content">
 					<h1 class="title title--main">
