@@ -3,14 +3,7 @@
 		<div class="testimonial__heading">
 			<h2 class="title title--subHeading">What they've said</h2>
 		</div>
-		<!--  -->
-		<!-- :effect="'cube'"
-      :cubeEffect="{
-        shadow: false,
-        slideShadows: false,
-        shadowOffset: 20,
-        shadowScale: 0.94,
-      }" -->
+
 		<swiper
 			:slidesPerView="'auto'"
 			:centeredSlides="true"
@@ -31,17 +24,14 @@
 				'640': {
 					spaceBetween: 20,
 					slideToClickedSlide: true,
-					// centeredSlides: true,
 				},
 				'768': {
 					spaceBetween: 30,
 					slideToClickedSlide: true,
-					// centeredSlides: true,
 				},
 				'1024': {
 					spaceBetween: 40,
 					slideToClickedSlide: true,
-					// centeredSlides: true,
 				},
 			}"
 			:modules="modules"
@@ -49,7 +39,7 @@
 		>
 			<swiper-slide class="testimonial__card">
 				<div class="profile">
-					<img src="@/assets/images/avatar-anisha.png" alt="" class="avatar" />
+					<img src="@/assets/images/avatar-anisha.png" alt="a profile picture of Anisha li" class="avatar" />
 					<p class="profile__name">Anisha Li</p>
 				</div>
 				<p class="text">
@@ -60,7 +50,7 @@
 			</swiper-slide>
 			<swiper-slide class="testimonial__card">
 				<div class="profile">
-					<img src="@/assets/images/avatar-ali.png" alt="" class="avatar" />
+					<img src="@/assets/images/avatar-ali.png" alt="a profile picture of Ali Bravo" class="avatar" />
 					<p class="profile__name">Ali Bravo</p>
 				</div>
 				<p class="text">
@@ -71,7 +61,7 @@
 			</swiper-slide>
 			<swiper-slide class="testimonial__card">
 				<div class="profile">
-					<img src="@/assets/images/avatar-richard.png" alt="" class="avatar" />
+					<img src="@/assets/images/avatar-richard.png" alt="a profile picture of Richard Watts" class="avatar" />
 					<p class="profile__name">Richard Watts</p>
 				</div>
 				<p class="text">
@@ -82,7 +72,7 @@
 			</swiper-slide>
 			<swiper-slide class="testimonial__card">
 				<div class="profile">
-					<img src="@/assets/images/avatar-shanai.png" alt="" class="avatar" />
+					<img src="@/assets/images/avatar-shanai.png" alt="a profile picture of Shanai Gough" class="avatar" />
 					<p class="profile__name">Shanai Gough</p>
 				</div>
 				<p class="text">

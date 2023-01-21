@@ -3,28 +3,28 @@
 		<section class="nav__bar--inner">
 			<!-- branding -->
 			<AppLink :to="{ name: 'home' }" class="nav__link--footer">
-				<img src="@/assets/images/logo.svg" alt="manage logo" class="branding" />
+				<img src="@/assets/images/logo.svg" alt="a link to the homepage" class="branding" />
 			</AppLink>
 
 			<!-- menu btn -->
-			<div class="hamburger" v-if="isMobile">
+			<section class="hamburger" v-if="isMobile">
 				<transition name="menuBtn" mode="out-in">
 					<button type="button" v-if="!isMenuOpen" @click="openMenu">
 						<img
 							src="@/assets/images/icon-hamburger.svg"
-							alt="open menu button"
+							alt="open navigation menu"
 							class="menu menu--open"
 						/>
 					</button>
 					<button type="button" v-else @click="openMenu">
 						<img
 							src="@/assets/images/icon-close.svg"
-							alt="close menu button"
+							alt="close navigation menu"
 							class="menu menu--close"
 						/>
 					</button>
 				</transition>
-			</div>
+			</section>
 
 			<!-- menu mobile-->
 			<transition

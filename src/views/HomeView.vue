@@ -31,6 +31,7 @@
 							:class="{ 'error-input': errors.length }"
 							placeholder="Updates in your inbox..."
 							v-bind="field"
+							aria-label="get updates in your inbox"
 						/>
 						<transition name="errorMsg">
 							<ErrorMessage name="email" class="errorMsg" />
@@ -86,26 +87,32 @@
 						<AppLink to="https://www.facebook.com" class="social__link">
 							<img
 								src="@/assets/images/icon-facebook.svg"
-								alt="facebook"
+								alt="visit our facebook page"
 								class="social__link-img"
 							/>
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.youtube.com" class="social__link">
-							<img src="@/assets/images/icon-youtube.svg" alt="youtube" />
+							<img
+								src="@/assets/images/icon-youtube.svg"
+								alt="check out our youtube channel"
+							/>
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.twitter.com" class="social__link">
-							<img src="@/assets/images/icon-twitter.svg" alt="twitter" />
+							<img
+								src="@/assets/images/icon-twitter.svg"
+								alt="see what's on our twitter feeds"
+							/>
 						</AppLink>
 					</li>
 					<li class="social_item">
 						<AppLink to="https://www.pinterest.com" class="social__link">
 							<img
 								src="@/assets/images/icon-pinterest.svg"
-								alt="pinterest"
+								alt="visit our pinterest page"
 							/>
 						</AppLink>
 					</li>
@@ -113,13 +120,17 @@
 						<AppLink to="https://www.instagram.com" class="social__link">
 							<img
 								src="@/assets/images/icon-instagram.svg"
-								alt="instagram"
+								alt="check out our instagram page"
 							/>
 						</AppLink>
 					</li>
 				</ul>
 				<AppLink :to="{ name: 'home' }" class="nav__link--footer">
-					<img src="@/assets/images/logo.svg" alt="manage logo" class="logo--footer" />
+					<img
+						src="@/assets/images/logo.svg"
+						alt="a link to manage homepage"
+						class="logo--footer"
+					/>
 				</AppLink>
 			</div>
 			<p class="copyright">Copyright 2020. All Rights Reserved</p>
