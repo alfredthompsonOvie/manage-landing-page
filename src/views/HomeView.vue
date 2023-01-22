@@ -7,7 +7,7 @@
 	<footer class="footer">
 		<section class="getStarted">
 			<div class="getStarted__content">
-				<p>Simplify how your team works today.</p>
+				<h1>Simplify how your team works today.</h1>
 				<AppLink :to="{ name: '' }" class="cta cta--alt">Get Started</AppLink>
 			</div>
 		</section>
@@ -25,13 +25,16 @@
 						:bails="false"
 						v-slot="{ field, errors }"
 					>
+					<label for="email">Email</label>
 						<input
 							type="email"
+							id="email"
 							class="form__control"
 							:class="{ 'error-input': errors.length }"
 							placeholder="Updates in your inbox..."
 							v-bind="field"
 							aria-label="get updates in your inbox"
+							aria-required="true"
 						/>
 						<transition name="errorMsg">
 							<ErrorMessage name="email" class="errorMsg" />
