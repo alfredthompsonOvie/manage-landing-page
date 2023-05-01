@@ -158,6 +158,7 @@ import AppHeader from "../components/AppHeader.vue";
 import AppAbout from "../components/AppAbout.vue";
 import AppTestimonials from "../components/AppTestimonials.vue";
 import AppLink from "../components/AppLink.vue";
+import { gsap } from "gsap";
 
 export default {
 	name: "HomeView",
@@ -179,6 +180,20 @@ export default {
 			console.log(values);
 		},
 	},
+	mounted() {
+		const tl = gsap.timeline();
+
+		tl
+		.from(".hero__illustration", {
+			autoAlpha: 0.01,
+			x: 20,
+		})
+		.from(".hero__content", {
+			autoAlpha: 0.01,
+			y: 20,
+			stagger: 0.2,
+		});
+	}
 };
 </script>
 
